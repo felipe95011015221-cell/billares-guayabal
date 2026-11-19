@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --color-carbon: #111714;
+  --color-carbon-2: #18201c;
+  --color-carbon-3: #222c27;
+  --color-verde: #164b37;
+  --color-verde-2: #1d5e45;
+  --color-verde-oscuro: #0e3426;
+  --color-oro: #c5a36a;
+  --color-oro-claro: #d9bf8e;
+  --color-oro-oscuro: #9e7f48;
+  --color-marfil: #f2ebdd;
+  --color-marfil-2: #e8dfcd;
+  --color-humo: #a7a99f;
+
+  --color-ok: #4f9a74;
+  --color-alerta: #d4a24c;
+  --color-error: #c46a5a;
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
+
+  --ease-club: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-fade-up: fade-up 0.9s var(--ease-club) both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-carbon);
+    color: var(--color-marfil);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-oro);
+    color: var(--color-carbon);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-oro);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  input, select, textarea, button { font: inherit; }
+}
+
+@layer components {
+  /* Etiqueta de sección: pequeña, espaciada, dorada */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-oro);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+  .claro .eyebrow { color: var(--color-oro-oscuro); }
+
+  /* Textura sutil de paño para secciones verdes */
+  .textura-verde {
+    background-color: var(--color-verde);
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgb(255 255 255 / 0.06), transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .linea-oro {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-oro), transparent);
+    opacity: 0.5;
+  }
+
+  .campo {
+    width: 100%;
+    min-height: 3rem;
+    border-radius: 0.375rem;
+    border: 1px solid rgb(242 235 221 / 0.18);
+    background: rgb(242 235 221 / 0.04);
+    padding: 0.75rem 1rem;
+    color: var(--color-marfil);
+    font-size: 1rem;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+  .campo::placeholder { color: rgb(242 235 221 / 0.4); }
+  .campo:hover { border-color: rgb(242 235 221 / 0.3); }
+  .campo:focus { outline: none; border-color: var(--color-oro); background: rgb(242 235 221 / 0.07); }
+  .campo[aria-invalid="true"] { border-color: var(--color-error); }
+  select.campo option { background: var(--color-carbon-2); color: var(--color-marfil); }
+
+  .claro .campo {
+    border-color: rgb(17 23 20 / 0.18);
+    background: #fffdf8;
+    color: var(--color-carbon);
+  }
+  .claro .campo::placeholder { color: rgb(17 23 20 / 0.4); }
+  .claro .campo:focus { border-color: var(--color-verde); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
