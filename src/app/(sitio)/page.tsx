@@ -16,7 +16,7 @@ import { enlaceWhatsApp } from "@/lib/whatsapp";
 export const revalidate = 60;
 
 export const metadata = metadatos({
-  titulo: "Billares Guayabal · Club de billar en Medellín",
+  titulo: "Club de Billares Guayabal · Billar en Medellín",
   descripcion:
     "Billares en Medellín: carambola a tres bandas y pool en Guayabal. Reserva tu mesa de billar en línea, clases, torneos y eventos.",
   ruta: "/",
@@ -51,7 +51,7 @@ export default async function Inicio() {
                   texto={
                     <>
                       <p>
-                        Billares Guayabal es un punto de encuentro en Medellín para quienes disfrutan el billar: el que viene a jugar con amigos un
+                        Club de Billares Guayabal es un punto de encuentro en Medellín para quienes disfrutan el billar: el que viene a jugar con amigos un
                         viernes, el que entrena su tiro de tres bandas y el que busca rivales para medirse.
                       </p>
                       <p className="mt-4">Aquí se juega, se compite, se aprende y se comparte. Cada mesa, una conversación distinta.</p>
