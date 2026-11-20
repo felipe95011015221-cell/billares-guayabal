@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { listaFotos } from "@/config/images";
+import { listaFotosClub } from "@/config/images";
 import type { Ajustes, Clase, FotoGaleria, Mesa } from "../types";
 
 export const ajustesPorDefecto: Ajustes = {
@@ -66,15 +66,15 @@ export const clasesPropuestas: Omit<Clase, "id">[] = [
   },
 ];
 
-export const galeriaInicial: Omit<FotoGaleria, "id">[] = listaFotos.map((f, i) => ({
+/** Galería inicial: solo fotos reales del club (las de banco gratuito ya no se muestran aquí). */
+export const galeriaInicial: Omit<FotoGaleria, "id">[] = listaFotosClub.map((f, i) => ({
   src: f.src,
   alt: f.alt,
   categoria: f.categoria,
   ancho: f.ancho,
   alto: f.alto,
-  esReferencia: true,
-  credito: `${f.autor} · ${f.fuente}`,
-  urlCredito: f.urlFuente,
+  esReferencia: false,
+  credito: "Club de Billares Guayabal",
   orden: i,
   visible: true,
 }));
