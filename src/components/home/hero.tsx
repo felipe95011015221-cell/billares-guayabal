@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import { fotos } from "@/config/images";
 import { estiloBoton } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -33,17 +34,27 @@ export function Hero({ titulo, subtitulo }: { titulo: string; subtitulo: string 
         <div className="absolute inset-0 bg-gradient-to-r from-carbon/85 via-carbon/30 to-transparent" />
       </motion.div>
 
-      <motion.div style={{ opacity: opacidad }} className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+      <motion.div style={{ opacity: opacidad }} className="mx-auto grid w-full max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-14 lg:px-12">
+        <div>
+        {/* Escudo del club: arriba del título en celular */}
+        <motion.div
+          initial={reducir ? false : { opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.1, ease }}
+          className="mb-8 lg:hidden"
+        >
+          <Logo priority sizes="160px" className="h-32 w-auto drop-shadow-[0_12px_30px_rgb(0_0_0/0.6)] sm:h-40" />
+        </motion.div>
         <motion.p
           initial={reducir ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease }}
           className="eyebrow mb-8"
         >
-          Club de billar · Guayabal, Medellín
+          Club de Billares Guayabal · Medellín
         </motion.p>
 
-        <h1 className="max-w-5xl font-display text-[clamp(3rem,10vw,8.5rem)] font-medium uppercase leading-[0.88] tracking-[-0.02em]">
+        <h1 className="max-w-5xl font-display text-[clamp(3rem,9vw,7rem)] font-medium uppercase leading-[0.88] tracking-[-0.02em]">
           {palabras.map((p, i) => (
             <span key={i} className="inline-block overflow-hidden pb-[0.08em] align-bottom">
               <motion.span
@@ -76,6 +87,18 @@ export function Hero({ titulo, subtitulo }: { titulo: string; subtitulo: string 
         >
           <Link href="/reservas" className={estiloBoton("oro", "lg")}>Reservar una mesa</Link>
           <Link href="/club" className={estiloBoton("contorno", "lg")}>Explorar el club</Link>
+        </motion.div>
+        </div>
+
+        {/* Escudo del club: columna derecha en escritorio */}
+        <motion.div
+          initial={reducir ? false : { opacity: 0, scale: 0.92, rotate: -4 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1.4, delay: 0.5, ease }}
+          className="relative hidden lg:block"
+        >
+          <div className="absolute inset-8 -z-10 rounded-full bg-oro/15 blur-3xl" aria-hidden />
+          <Logo priority sizes="420px" className="h-auto w-[clamp(300px,30vw,420px)] drop-shadow-[0_30px_60px_rgb(0_0_0/0.7)]" />
         </motion.div>
       </motion.div>
 
