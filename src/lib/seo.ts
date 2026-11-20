@@ -3,8 +3,11 @@ import { siteConfig, esConfirmado } from "@/config/site";
 import { fotos } from "@/config/images";
 
 export function metadatos({ titulo, descripcion, ruta, imagen = fotos.heroSalon.src }: { titulo: string; descripcion: string; ruta: string; imagen?: string }): Metadata {
+  // Si el título ya trae el nombre del club, no se le vuelve a agregar (evita "… · Club de Billares Guayabal" repetido).
+  const incluyeNombre = titulo.includes(siteConfig.nombreCorto);
+  const tituloCompleto = incluyeNombre ? titulo : `${titulo} · ${siteConfig.nombreCorto}`;
   return {
-    title: titulo,
+    title: incluyeNombre ? { absolute: titulo } : titulo,
     description: descripcion,
     alternates: { canonical: ruta },
     openGraph: {
@@ -12,7 +15,7 @@ export function metadatos({ titulo, descripcion, ruta, imagen = fotos.heroSalon.
       locale: "es_CO",
       url: ruta,
       siteName: siteConfig.nombreCorto,
-      title: `${titulo} · ${siteConfig.nombreCorto}`,
+      title: tituloCompleto,
       description: descripcion,
       images: [{ url: imagen, width: 2400, height: 1600, alt: "Fotografía de referencia de billar" }],
     },
