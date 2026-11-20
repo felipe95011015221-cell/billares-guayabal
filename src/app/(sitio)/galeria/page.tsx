@@ -9,7 +9,7 @@ export const revalidate = 60;
 
 export const metadata = metadatos({
   titulo: "Galería",
-  descripcion: "Galería de billar: carambola a tres bandas, pool y el ambiente de Billares Guayabal en Medellín.",
+  descripcion: "Galería de billar: carambola a tres bandas, pool y el ambiente de Club de Billares Guayabal en Medellín.",
   ruta: "/galeria",
   imagen: fotos.tiroMesaVerde.src,
 });
@@ -22,7 +22,7 @@ export default async function GaleriaPage() {
       <EncabezadoPagina
         eyebrow="Galería"
         titulo={<>El billar, <em className="text-oro">en detalle.</em></>}
-        texto={soloReferencia ? "Por ahora mostramos fotografías de referencia de bancos de imágenes gratuitos. Muy pronto, fotos reales del club." : "Momentos, mesas y detalles de Billares Guayabal."}
+        texto={soloReferencia ? "Por ahora mostramos fotografías de referencia de bancos de imágenes gratuitos. Muy pronto, fotos reales del club." : "Momentos, mesas y detalles de Club de Billares Guayabal."}
       />
       <Seccion tono="oscuro" className="!pt-4">
         <Contenedor><Galeria fotos={lista} /></Contenedor>
