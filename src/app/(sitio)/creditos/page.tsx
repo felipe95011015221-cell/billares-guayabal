@@ -9,7 +9,7 @@ export const metadata = { ...metadatos({ titulo: "Créditos fotográficos", desc
 export default function CreditosPage() {
   return (
     <>
-      <EncabezadoPagina eyebrow="Créditos" titulo="Fotografías de referencia" texto="Estas imágenes provienen de bancos gratuitos con licencia de uso comercial. No muestran las instalaciones reales de Billares Guayabal." />
+      <EncabezadoPagina eyebrow="Créditos" titulo="Fotografías de referencia" texto="Estas imágenes provienen de bancos gratuitos con licencia de uso comercial. No muestran las instalaciones reales de Club de Billares Guayabal." />
       <Seccion tono="oscuro" className="!pt-2">
         <Contenedor>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
