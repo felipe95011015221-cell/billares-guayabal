@@ -21,8 +21,8 @@ export default async function GaleriaPage() {
     <>
       <EncabezadoPagina
         eyebrow="Galería"
-        titulo={<>El billar, <em className="text-oro">en detalle.</em></>}
-        texto={soloReferencia ? "Por ahora mostramos fotografías de referencia de bancos de imágenes gratuitos. Muy pronto, fotos reales del club." : "Momentos, mesas y detalles de Club de Billares Guayabal."}
+        titulo={<>Nuestro club, <em className="text-oro">en detalle.</em></>}
+        texto={soloReferencia ? "Por ahora mostramos fotografías de referencia de bancos de imágenes gratuitos. Muy pronto, fotos reales del club." : "Fotos reales de nuestras mesas de carambola y del ambiente del Club de Billares Guayabal."}
       />
       <Seccion tono="oscuro" className="!pt-4">
         <Contenedor><Galeria fotos={lista} /></Contenedor>
