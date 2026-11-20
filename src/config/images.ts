@@ -107,4 +107,11 @@ export const fotosClub = {
   },
 } satisfies Record<string, FotoClub>;
 
+/** Galería: solo las fotos del salón y las mesas. */
 export const listaFotosClub: FotoClub[] = Object.values(fotosClub);
+
+/** Foto de jugador editada con estilo de estudio (scripts/editar-foto-estudio.mjs). Se usa en «El club» del inicio. */
+export const fotoJugadorEstudio: FotoClub = {
+  id: "jugador-estudio", src: "/images/club/jugador-estudio.webp", ancho: 1554, alto: 1204, categoria: "carambola",
+  alt: "Jugador de camiseta naranja concentrado mientras apunta su tiro sobre una mesa de paño azul",
+};
