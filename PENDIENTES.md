@@ -6,7 +6,7 @@ Nada de lo siguiente debe publicarse como dato oficial hasta que el propietario 
 
 | Dato | Valor actual | Estado | Nota |
 |---|---|---|---|
-| Nombre comercial | Club de Billares Guayabal | Por validar | ¿Razón social y NIT? (necesarios para la política de datos) |
+| Nombre comercial | Club de Billares Guayabal | **Confirmado** (19 nov. 2026) | Falta razón social y NIT para la política de datos. |
 | Dirección | Carrera 52 #9-17, Guayabal, Medellín | Por validar | Dato del brief. Una búsqueda web (19 nov. 2026) **no lo pudo contrastar** con otra fuente. Confirmar también el pin de Google Maps. |
 | Teléfono / WhatsApp | +57 314 773 0533 | Por validar | Confirmar que es línea de WhatsApp Business del club. |
 | Horario | Todos los días, 9:00 a. m. – 2:00 a. m. | Por validar | ¿Varía en festivos o fines de semana? |
@@ -36,7 +36,7 @@ Nada de lo siguiente debe publicarse como dato oficial hasta que el propietario 
 ## Legal y marca
 
 - [ ] Política de tratamiento de datos (Ley 1581 de 2012): responsable, NIT, canal de atención. El texto en `/privacidad` es un borrador.
-- [ ] Logotipo oficial (hoy se usa un monograma "BG" provisional).
+- [x] Logotipo oficial: recibido e integrado (`public/images/logo.webp`, íconos en `src/app/icon.png` y `apple-icon.png`). Para máxima nitidez, conviene pedir el archivo original en vector (SVG o PDF).
 - [ ] Fotografías reales del local, en especial de las mesas de carambola.
 - [ ] Dominio definitivo (para `NEXT_PUBLIC_SITE_URL`).
 
