@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LogOut, ExternalLink } from "lucide-react";
-import { Monograma } from "@/components/icons";
+import { Logo } from "@/components/logo";
 import { NavAdmin } from "@/components/admin/nav-admin";
 import { requerirAdmin } from "@/lib/auth";
 import { modoDatos } from "@/lib/env";
@@ -22,7 +22,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
         <aside className="lg:sticky lg:top-6 lg:h-[calc(100dvh-3rem)]">
           <div className="flex items-center justify-between lg:block">
             <Link href="/admin" className="flex items-center gap-3">
-              <Monograma className="h-9 w-9 text-oro" />
+              <Logo className="h-11 w-auto" sizes="80px" />
               <span className="font-display text-xl leading-none">Guayabal<span className="block text-[0.6rem] font-sans uppercase tracking-[0.24em] text-marfil/45">Administración</span></span>
             </Link>
             <form action={accionLogout} className="lg:hidden">
