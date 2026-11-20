@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = metadatos({
   titulo: "Torneos y campeonatos de billar en Medellín",
-  descripcion: "Torneos de carambola a tres bandas y pool en Billares Guayabal, Medellín. Fechas, formato, cupos e inscripción en línea.",
+  descripcion: "Torneos de carambola a tres bandas y pool en Club de Billares Guayabal, Medellín. Fechas, formato, cupos e inscripción en línea.",
   ruta: "/torneos",
   imagen: fotos.trianguloTacos.src,
 });
