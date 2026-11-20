@@ -15,7 +15,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = metadatos({
   titulo: "Reservar mesa de billar en Medellín",
-  descripcion: "Reserva tu mesa de carambola a tres bandas o pool en Billares Guayabal, Medellín. Consulta disponibilidad en tiempo real y recibe tu código.",
+  descripcion: "Reserva tu mesa de carambola a tres bandas o pool en Club de Billares Guayabal, Medellín. Consulta disponibilidad en tiempo real y recibe tu código.",
   ruta: "/reservas",
   imagen: fotos.tiroMesaVerde.src,
 });
