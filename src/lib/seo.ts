@@ -34,6 +34,7 @@ export function jsonLdNegocio() {
     url: c.url,
     areaServed: { "@type": "City", name: "Medellín" },
     sport: "Billiards",
+    logo: `${c.url.replace(/\/$/, "")}/images/logo.png`,
   };
   if (esConfirmado(c.direccion))
     data.address = { "@type": "PostalAddress", streetAddress: c.direccion.valor, addressLocality: c.ciudad.valor, addressRegion: c.region, addressCountry: c.pais };

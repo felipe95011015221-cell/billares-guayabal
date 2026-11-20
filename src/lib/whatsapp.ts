@@ -3,12 +3,12 @@ import { siteConfig } from "@/config/site";
 export type ContextoWhatsApp = "general" | "reservas" | "clases" | "torneos" | "eventos" | "ubicacion";
 
 const MENSAJES: Record<ContextoWhatsApp, string> = {
-  general: "Hola, Billares Guayabal. Quisiera más información sobre el club.",
-  reservas: "Hola, Billares Guayabal. Quisiera reservar una mesa. ¿Me ayudan con la disponibilidad?",
-  clases: "Hola, Billares Guayabal. Me interesan las clases de billar. ¿Qué programas y horarios tienen?",
-  torneos: "Hola, Billares Guayabal. Quisiera información sobre los próximos torneos y cómo inscribirme.",
-  eventos: "Hola, Billares Guayabal. Quisiera cotizar un evento en el club.",
-  ubicacion: "Hola, Billares Guayabal. ¿Me confirman la dirección y cómo llegar?",
+  general: "Hola, Club de Billares Guayabal. Quisiera más información sobre el club.",
+  reservas: "Hola, Club de Billares Guayabal. Quisiera reservar una mesa. ¿Me ayudan con la disponibilidad?",
+  clases: "Hola, Club de Billares Guayabal. Me interesan las clases de billar. ¿Qué programas y horarios tienen?",
+  torneos: "Hola, Club de Billares Guayabal. Quisiera información sobre los próximos torneos y cómo inscribirme.",
+  eventos: "Hola, Club de Billares Guayabal. Quisiera cotizar un evento en el club.",
+  ubicacion: "Hola, Club de Billares Guayabal. ¿Me confirman la dirección y cómo llegar?",
 };
 
 export function enlaceWhatsApp(contexto: ContextoWhatsApp = "general", textoExtra?: string): string {
