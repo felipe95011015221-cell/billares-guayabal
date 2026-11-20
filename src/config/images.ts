@@ -82,3 +82,29 @@ export const fotos = {
 } satisfies Record<string, FotoReferencia>;
 
 export const listaFotos: FotoReferencia[] = Object.values(fotos);
+
+/**
+ * Fotografías REALES del Club de Billares Guayabal (entregadas por el club, editadas
+ * con scripts/editar-fotos-club.mjs). Son las que se muestran en la galería.
+ */
+export interface FotoClub {
+  id: string;
+  src: string;
+  alt: string;
+  ancho: number;
+  alto: number;
+  categoria: CategoriaFoto;
+}
+
+export const fotosClub = {
+  salonCarambola: {
+    id: "salon-mesas-carambola", src: "/images/club/salon-mesas-carambola.webp", ancho: 960, alto: 1200, categoria: "carambola",
+    alt: "Salón del Club de Billares Guayabal con mesas de carambola de paño azul y jugadores al fondo",
+  },
+  mesaDetalle: {
+    id: "mesa-carambola-detalle", src: "/images/club/mesa-carambola-detalle.webp", ancho: 960, alto: 1200, categoria: "carambola",
+    alt: "Mesa de carambola del club en primer plano con bolas blanca y roja sobre el paño azul",
+  },
+} satisfies Record<string, FotoClub>;
+
+export const listaFotosClub: FotoClub[] = Object.values(fotosClub);
