@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CalendarCheck, Search, Sparkles, Ticket } from "lucide-react";
 import Image from "next/image";
-import { fotos, listaFotosClub } from "@/config/images";
+import { fotoJugadorEstudio, fotos, listaFotosClub } from "@/config/images";
 import { Hero } from "@/components/home/hero";
 import { CtaFinal } from "@/components/site/cta-final";
 import { TarjetaClase, TarjetaTorneo } from "@/components/site/tarjetas";
@@ -64,10 +64,15 @@ export default async function Inicio() {
             </div>
             <div className="relative lg:col-span-7">
               <Reveal y={40}>
-                <Foto foto={fotos.jugadorPool} className="aspect-[4/3] rounded-sm" sizes="(min-width:1024px) 58vw, 100vw" />
-              </Reveal>
-              <Reveal delay={0.2} className="absolute -bottom-10 -left-4 w-[42%] sm:-left-10 lg:-left-16">
-                <Foto foto={fotos.manoTaco} className="aspect-[3/4] rounded-sm border-8 border-marfil shadow-2xl" sizes="30vw" etiqueta={false} />
+                <div className="relative aspect-[1554/1204] overflow-hidden rounded-sm bg-carbon shadow-[0_40px_80px_-40px_rgb(17_23_20/0.7)]">
+                  <Image
+                    src={fotoJugadorEstudio.src}
+                    alt={fotoJugadorEstudio.alt}
+                    fill
+                    sizes="(min-width:1024px) 58vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
               </Reveal>
             </div>
           </div>
