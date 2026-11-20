@@ -424,7 +424,7 @@ function MiniMesa({ modalidad, activa }: { modalidad: Modalidad; activa: boolean
 function ConfirmacionReserva({ r, topRef }: { r: Resultado; topRef: React.RefObject<HTMLDivElement | null> }) {
   const pendiente = r.estado === "pendiente";
   const texto =
-    `Reserva Billares Guayabal\nCódigo: ${r.codigo}\nEstado: ${pendiente ? "Solicitud pendiente de confirmación" : "Confirmada"}\n` +
+    `Reserva Club de Billares Guayabal\nCódigo: ${r.codigo}\nEstado: ${pendiente ? "Solicitud pendiente de confirmación" : "Confirmada"}\n` +
     `${r.modalidad === "pool" ? "Pool" : "Carambola"} · ${r.mesa}\n${formatoFecha(r.inicio)}, ${formatoHora(r.inicio)} – ${formatoHora(r.fin)}`;
   return (
     <div ref={topRef} className="scroll-mt-28">
