@@ -9,12 +9,12 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", displa
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: "Billares Guayabal · Club de billar en Medellín", template: "%s · Billares Guayabal" },
+  title: { default: "Club de Billares Guayabal · Billar en Medellín", template: "%s · Club de Billares Guayabal" },
   description:
     "Club de billar en Guayabal, Medellín. Carambola a tres bandas y pool. Reserva tu mesa en línea, conoce la escuela de billar, torneos y eventos.",
   applicationName: siteConfig.nombreCorto,
   keywords: [
-    "billares en Medellín", "Billares Guayabal", "club de billar Medellín", "billar tres bandas Medellín",
+    "billares en Medellín", "Club de Billares Guayabal", "Billares Guayabal", "club de billar Medellín", "billar tres bandas Medellín",
     "jugar pool en Medellín", "reservar mesa de billar Medellín", "clases de billar Medellín",
   ],
   formatDetection: { telephone: false },
