@@ -8,16 +8,3 @@ export function IconoWhatsApp(p: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-/** Monograma del club: bola con las iniciales. */
-export function Monograma(p: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden {...p}>
-      <circle cx="20" cy="20" r="18.5" stroke="currentColor" strokeWidth="1" />
-      <circle cx="20" cy="20" r="13" stroke="currentColor" strokeWidth="0.6" opacity="0.5" />
-      <text x="20" y="24.5" textAnchor="middle" fontFamily="var(--font-display)" fontSize="13" fill="currentColor" letterSpacing="0.5">
-        BG
-      </text>
-    </svg>
-  );
-}
