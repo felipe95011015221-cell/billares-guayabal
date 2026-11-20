@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CalendarCheck, Search, Sparkles, Ticket } from "lucide-react";
-import { fotos } from "@/config/images";
+import Image from "next/image";
+import { fotos, listaFotosClub } from "@/config/images";
 import { Hero } from "@/components/home/hero";
 import { CtaFinal } from "@/components/site/cta-final";
 import { TarjetaClase, TarjetaTorneo } from "@/components/site/tarjetas";
@@ -197,15 +198,18 @@ export default async function Inicio() {
       <Seccion tono="carbon2" className="!py-20 sm:!py-28">
         <Contenedor>
           <div className="flex items-end justify-between gap-6">
-            <Reveal><EncabezadoSeccion eyebrow="Galería" titulo="El ambiente del billar" /></Reveal>
+            <Reveal><EncabezadoSeccion eyebrow="Galería" titulo={<>Así se vive <span className="italic text-oro">el club.</span></>} /></Reveal>
             <Link href="/galeria" className={estiloBoton("contorno", "sm", "hidden sm:inline-flex")}>Ver galería</Link>
           </div>
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:grid-rows-2">
-            <Reveal className="col-span-2 row-span-2"><Foto foto={fotos.tiroMesaVerde} className="aspect-square h-full rounded-sm lg:aspect-auto" sizes="(min-width:1024px) 50vw, 100vw" /></Reveal>
-            <Reveal delay={0.05}><Foto foto={fotos.tresBolas} className="aspect-square rounded-sm" sizes="25vw" /></Reveal>
-            <Reveal delay={0.1}><Foto foto={fotos.trianguloBolas} className="aspect-square rounded-sm" sizes="25vw" /></Reveal>
-            <Reveal delay={0.15}><Foto foto={fotos.mesaAzulTacos} className="aspect-square rounded-sm" sizes="25vw" /></Reveal>
-            <Reveal delay={0.2}><Foto foto={fotos.salonMesas} className="aspect-square rounded-sm" sizes="25vw" /></Reveal>
+          <div className="mt-14 grid gap-4 sm:grid-cols-2">
+            {listaFotosClub.map((f, i) => (
+              <Reveal key={f.id} delay={i * 0.1}>
+                <Link href="/galeria" className="group relative block aspect-[4/5] overflow-hidden rounded-sm">
+                  <Image src={f.src} alt={f.alt} fill sizes="(min-width:640px) 50vw, 100vw" className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-club)] group-hover:scale-[1.04]" />
+                  <span className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
+                </Link>
+              </Reveal>
+            ))}
           </div>
           <Link href="/galeria" className={estiloBoton("contorno", "md", "mt-8 w-full sm:hidden")}>Ver galería</Link>
         </Contenedor>
