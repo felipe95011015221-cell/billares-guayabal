@@ -3,7 +3,7 @@ import { EncabezadoPagina } from "@/components/site/encabezado-pagina";
 import { Contenedor, Seccion } from "@/components/ui/primitives";
 import { metadatos } from "@/lib/seo";
 
-export const metadata = { ...metadatos({ titulo: "Consultar mi reserva", descripcion: "Consulta el estado de tu reserva en Billares Guayabal con tu código y celular.", ruta: "/reservas/consultar" }), robots: { index: false } };
+export const metadata = { ...metadatos({ titulo: "Consultar mi reserva", descripcion: "Consulta el estado de tu reserva en Club de Billares Guayabal con tu código y celular.", ruta: "/reservas/consultar" }), robots: { index: false } };
 
 export default function ConsultarPage() {
   return (
