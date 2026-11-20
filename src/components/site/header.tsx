@@ -36,6 +36,7 @@ export function Header() {
   const solido = scroll || abierto;
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[var(--ease-club)]",
@@ -94,7 +95,10 @@ export function Header() {
           </button>
         </div>
       </div>
+    </header>
 
+      {/* El panel va FUERA del <header>: el desenfoque (backdrop-filter) del encabezado
+          convertiría al encabezado en el contenedor del panel fijo y lo dejaría con altura 0. */}
       <AnimatePresence>
         {abierto && (
           <motion.div
@@ -103,7 +107,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto bg-carbon xl:hidden"
+            className="fixed inset-x-0 bottom-0 top-16 z-[45] overflow-y-auto overscroll-contain bg-carbon xl:hidden"
           >
             <nav aria-label="Menú móvil" className="flex min-h-full flex-col px-6 pb-10 pt-6">
               <ul className="divide-y divide-marfil/10 border-y border-marfil/10">
@@ -134,6 +138,6 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
