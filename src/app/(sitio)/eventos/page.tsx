@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = metadatos({
   titulo: "Eventos privados y empresariales con billar en Medellín",
-  descripcion: "Solicita eventos privados, encuentros empresariales, celebraciones y jornadas recreativas en Billares Guayabal, Medellín.",
+  descripcion: "Solicita eventos privados, encuentros empresariales, celebraciones y jornadas recreativas en Club de Billares Guayabal, Medellín.",
   ruta: "/eventos",
   imagen: fotos.salonMesas.src,
 });
