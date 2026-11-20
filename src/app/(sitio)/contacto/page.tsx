@@ -9,7 +9,7 @@ import { enlaceWhatsApp, type ContextoWhatsApp } from "@/lib/whatsapp";
 
 export const metadata = metadatos({
   titulo: "Contacto y ubicación",
-  descripcion: "Ubicación, teléfono, WhatsApp y cómo llegar a Billares Guayabal en Guayabal, Medellín.",
+  descripcion: "Ubicación, teléfono, WhatsApp y cómo llegar a Club de Billares Guayabal en Guayabal, Medellín.",
   ruta: "/contacto",
 });
 
