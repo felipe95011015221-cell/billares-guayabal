@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Monograma } from "@/components/icons";
+import { Logo } from "@/components/logo";
 import { FormLogin } from "./form-login";
 import { estadoAuth } from "@/lib/auth";
 
@@ -11,9 +11,9 @@ export default function LoginPage() {
   return (
     <main className="flex min-h-dvh items-center justify-center bg-carbon px-5 py-16 text-marfil">
       <div className="w-full max-w-sm">
-        <Monograma className="mx-auto h-14 w-14 text-oro" />
+        <Logo priority className="mx-auto h-32 w-auto" />
         <h1 className="mt-6 text-center font-display text-4xl">Administración</h1>
-        <p className="mt-2 text-center text-sm text-marfil/50">Billares Guayabal</p>
+        <p className="mt-2 text-center text-sm text-marfil/50">Club de Billares Guayabal</p>
         {estado.disponible ? (
           <>
             {estado.metodo === "demo" && <p className="mt-6 rounded-lg border border-alerta/40 bg-alerta/10 p-3 text-xs text-alerta">Modo demostración local. Las credenciales están en su archivo .env.local.</p>}
