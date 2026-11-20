@@ -1,7 +1,7 @@
 /**
  * Registro de fotografías de referencia.
  * IMPORTANTE: son fotografías de bancos gratuitos y NO muestran las instalaciones reales
- * de Billares Guayabal. La web las identifica como "Fotografía de referencia".
+ * de Club de Billares Guayabal. La web las identifica como "Fotografía de referencia".
  * Reemplácelas por fotos reales desde /admin/galeria cuando estén disponibles.
  */
 export type CategoriaFoto = "pool" | "carambola" | "ambiente" | "detalle";

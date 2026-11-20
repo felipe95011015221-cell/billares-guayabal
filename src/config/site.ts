@@ -22,8 +22,8 @@ export interface Dato<T> {
 
 export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  nombre: { valor: "Club de Billares Guayabal", estado: "publico", fuente: "Brief del proyecto" } as Dato<string>,
-  nombreCorto: "Billares Guayabal",
+  nombre: { valor: "Club de Billares Guayabal", estado: "confirmado", fuente: "Confirmado por el cliente junto con el logo oficial (19 nov. 2026)" } as Dato<string>,
+  nombreCorto: "Club de Billares Guayabal",
   ciudad: { valor: "Medellín", estado: "confirmado" } as Dato<string>,
   barrio: { valor: "Guayabal", estado: "publico", fuente: "Brief del proyecto" } as Dato<string>,
   region: "Antioquia",
