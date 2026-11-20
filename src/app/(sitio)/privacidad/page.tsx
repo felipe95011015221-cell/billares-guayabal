@@ -3,7 +3,7 @@ import { EncabezadoPagina } from "@/components/site/encabezado-pagina";
 import { Aviso, Contenedor, Seccion } from "@/components/ui/primitives";
 import { metadatos } from "@/lib/seo";
 
-export const metadata = metadatos({ titulo: "Tratamiento de datos personales", descripcion: "Política de tratamiento de datos personales de Billares Guayabal.", ruta: "/privacidad" });
+export const metadata = metadatos({ titulo: "Tratamiento de datos personales", descripcion: "Política de tratamiento de datos personales de Club de Billares Guayabal.", ruta: "/privacidad" });
 
 export default function PrivacidadPage() {
   return (
