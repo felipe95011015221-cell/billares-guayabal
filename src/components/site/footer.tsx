@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { Monograma } from "@/components/icons";
+import { Logo } from "@/components/logo";
 import { Contenedor } from "@/components/ui/primitives";
 import { enlaceComoLlegar, enlaceLlamar, enlaceWhatsApp } from "@/lib/whatsapp";
 import { NAV } from "@/config/nav";
@@ -13,9 +13,8 @@ export function Footer() {
       <Contenedor>
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <Monograma className="h-11 w-11 text-oro" />
-              <span className="font-display text-3xl">Billares Guayabal</span>
+            <Link href="/" className="inline-block" aria-label="Club de Billares Guayabal, inicio">
+              <Logo className="h-36 w-auto sm:h-44" sizes="220px" />
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-marfil/60">
               Carambola a tres bandas y pool en Guayabal, Medellín. Un lugar para jugar, competir, aprender y compartir.

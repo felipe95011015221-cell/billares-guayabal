@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, Phone, MapPin } from "lucide-react";
-import { Monograma, IconoWhatsApp } from "@/components/icons";
+import { IconoWhatsApp } from "@/components/icons";
+import { Logo } from "@/components/logo";
 import { estiloBoton } from "@/components/ui/button";
 import { cn } from "@/lib/format";
 import { enlaceComoLlegar, enlaceLlamar, enlaceWhatsApp } from "@/lib/whatsapp";
@@ -45,11 +46,11 @@ export function Header() {
         Saltar al contenido
       </a>
       <div className={cn("mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-500 sm:px-8 lg:px-12", solido ? "h-16" : "h-20 lg:h-24")}>
-        <Link href="/" className="flex items-center gap-3 text-marfil" aria-label="Billares Guayabal, inicio">
-          <Monograma className="h-9 w-9 text-oro" />
+        <Link href="/" className="flex items-center gap-3 text-marfil" aria-label="Club de Billares Guayabal, inicio">
+          <Logo priority sizes="96px" className={cn("w-auto drop-shadow-[0_4px_12px_rgb(0_0_0/0.5)] transition-all duration-500", solido ? "h-11" : "h-14 lg:h-16")} />
           <span className="whitespace-nowrap leading-none">
-            <span className="block font-display text-xl tracking-wide">Billares Guayabal</span>
-            <span className="block text-[0.6rem] uppercase tracking-[0.32em] text-marfil/55">Club · Medellín</span>
+            <span className="block text-[0.6rem] font-semibold uppercase tracking-[0.3em] text-oro">Club de Billares</span>
+            <span className="mt-0.5 block font-display text-2xl tracking-wide">Guayabal</span>
           </span>
         </Link>
 
