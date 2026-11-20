@@ -10,7 +10,7 @@ import { metadatos } from "@/lib/seo";
 
 export const metadata = metadatos({
   titulo: "Nuestro club de billar en Guayabal",
-  descripcion: "Billares Guayabal: un club de billar en Medellín para jugar carambola a tres bandas y pool, competir, aprender y compartir.",
+  descripcion: "Club de Billares Guayabal: un club de billar en Medellín para jugar carambola a tres bandas y pool, competir, aprender y compartir.",
   ruta: "/club",
   imagen: fotos.jugadorPool.src,
 });
@@ -47,7 +47,7 @@ export default function ClubPage() {
                 competencia.
               </p>
               <p>
-                En Billares Guayabal encontrarás mesas para las dos modalidades más jugadas en Medellín: la carambola a tres bandas, tradición del
+                En Club de Billares Guayabal encontrarás mesas para las dos modalidades más jugadas en Medellín: la carambola a tres bandas, tradición del
                 billar colombiano, y el pool, el juego ágil y social que reúne a los grupos.
               </p>
             </Reveal>
