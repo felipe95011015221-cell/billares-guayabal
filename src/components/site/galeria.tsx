@@ -20,6 +20,9 @@ export function Galeria({ fotos }: { fotos: FotoGaleria[] }) {
   const [filtro, setFiltro] = useState<(typeof FILTROS)[number]["id"]>("todas");
   const [abierta, setAbierta] = useState<number | null>(null);
   const visibles = fotos.filter((f) => filtro === "todas" || f.categoria === filtro);
+  // Solo se muestran filtros con fotos; si todas son de una misma categoría, no hace falta filtrar.
+  const filtros = FILTROS.filter((x) => x.id === "todas" || fotos.some((f) => f.categoria === x.id));
+  const columnas = visibles.length <= 2 ? "columns-1 sm:columns-2" : "columns-1 sm:columns-2 lg:columns-3";
 
   const mover = useCallback((d: number) => setAbierta((i) => (i === null ? null : (i + d + visibles.length) % visibles.length)), [visibles.length]);
 
@@ -42,8 +45,9 @@ export function Galeria({ fotos }: { fotos: FotoGaleria[] }) {
 
   return (
     <>
+      {filtros.length > 2 && (
       <div role="tablist" aria-label="Filtrar por modalidad" className="-mx-5 mb-10 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">
-        {FILTROS.map((f) => {
+        {filtros.map((f) => {
           const n = f.id === "todas" ? fotos.length : fotos.filter((x) => x.categoria === f.id).length;
           return (
             <button
@@ -58,11 +62,12 @@ export function Galeria({ fotos }: { fotos: FotoGaleria[] }) {
           );
         })}
       </div>
+      )}
 
       {visibles.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-marfil/15 p-12 text-center text-marfil/55">Aún no hay fotos en esta categoría. Pronto publicaremos fotografías reales del club.</p>
       ) : (
-        <motion.ul layout className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>li]:mb-4">
+        <motion.ul layout className={cn("gap-4 [&>li]:mb-4", columnas)}>
           <AnimatePresence mode="popLayout">
             {visibles.map((f, i) => (
               <motion.li key={f.id} layout initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.45 }} className="break-inside-avoid">
