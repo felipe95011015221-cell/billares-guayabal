@@ -19,7 +19,7 @@ export function EncabezadoPagina({ eyebrow, titulo, texto, foto, children }: { e
         <Reveal>
           <p className="eyebrow mb-6">{eyebrow}</p>
           <h1 className="max-w-4xl font-display text-5xl leading-[0.95] sm:text-7xl lg:text-8xl">{titulo}</h1>
-          {texto && <div className="mt-8 max-w-2xl text-base leading-relaxed text-marfil/70 sm:text-lg">{texto}</div>}
+          {texto && <div className="mt-8 max-w-2xl text-justify hyphens-auto text-base leading-relaxed text-marfil/70 sm:text-lg">{texto}</div>}
           {children}
         </Reveal>
       </Contenedor>
