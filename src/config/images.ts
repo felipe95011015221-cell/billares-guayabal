@@ -107,8 +107,43 @@ export const fotosClub = {
   },
 } satisfies Record<string, FotoClub>;
 
-/** Galería: solo las fotos del salón y las mesas. */
+/** Las 2 fotos que se muestran en «Así se vive el club» del inicio. */
 export const listaFotosClub: FotoClub[] = Object.values(fotosClub);
+
+/** Fotos adicionales del club (capturas recortadas con scripts/editar-fotos-galeria.mjs). */
+export const fotosClubGaleria = {
+  salonPanoramico: {
+    id: "salon-panoramico", src: "/images/club/salon-panoramico.webp", ancho: 913, alto: 1220, categoria: "ambiente",
+    alt: "Vista desde el segundo piso del salón del Club de Billares Guayabal con sus mesas de carambola en juego",
+  },
+  salonVistaAltaDia: {
+    id: "salon-vista-alta-dia", src: "/images/club/salon-vista-alta-dia.webp", ancho: 913, alto: 1220, categoria: "carambola",
+    alt: "Jugadores en las mesas de carambola de paño azul vistas desde el balcón del club",
+  },
+  mesasEnJuego: {
+    id: "mesas-en-juego", src: "/images/club/mesas-en-juego.webp", ancho: 913, alto: 1220, categoria: "carambola",
+    alt: "Fila de mesas de carambola con partidas en curso en el salón del club",
+  },
+  salonVistaAltaNoche: {
+    id: "salon-vista-alta-noche", src: "/images/club/salon-vista-alta-noche.webp", ancho: 913, alto: 512, categoria: "ambiente",
+    alt: "El salón de noche con todas las mesas ocupadas y el mural de campeones en la pared",
+  },
+  barDelClub: {
+    id: "bar-del-club", src: "/images/club/bar-del-club.webp", ancho: 913, alto: 682, categoria: "ambiente",
+    alt: "Barra del club con clientes sentados y estantería iluminada en tonos morados",
+  },
+} satisfies Record<string, FotoClub>;
+
+/** Galería completa: todas las fotos reales del club. */
+export const listaGaleriaClub: FotoClub[] = [
+  fotosClubGaleria.salonPanoramico,
+  fotosClub.salonCarambola,
+  fotosClubGaleria.salonVistaAltaDia,
+  fotosClubGaleria.mesasEnJuego,
+  fotosClub.mesaDetalle,
+  fotosClubGaleria.salonVistaAltaNoche,
+  fotosClubGaleria.barDelClub,
+];
 
 /** Foto de jugador editada con estilo de estudio (scripts/editar-foto-estudio.mjs). Se usa en «El club» del inicio. */
 export const fotoJugadorEstudio: FotoClub = {
