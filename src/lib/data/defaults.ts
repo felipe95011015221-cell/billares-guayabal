@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { listaFotosClub } from "@/config/images";
+import { listaGaleriaClub } from "@/config/images";
 import type { Ajustes, Clase, FotoGaleria, Mesa } from "../types";
 
 export const ajustesPorDefecto: Ajustes = {
@@ -67,7 +67,7 @@ export const clasesPropuestas: Omit<Clase, "id">[] = [
 ];
 
 /** Galería inicial: solo fotos reales del club (las de banco gratuito ya no se muestran aquí). */
-export const galeriaInicial: Omit<FotoGaleria, "id">[] = listaFotosClub.map((f, i) => ({
+export const galeriaInicial: Omit<FotoGaleria, "id">[] = listaGaleriaClub.map((f, i) => ({
   src: f.src,
   alt: f.alt,
   categoria: f.categoria,
