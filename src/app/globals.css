@@ -58,7 +58,15 @@
     letter-spacing: -0.01em;
     text-wrap: balance;
   }
-  p { text-wrap: pretty; }
+  /* Párrafos justificados. La división silábica (con lang="es-CO") evita espacios
+     grandes entre palabras en columnas angostas del celular. */
+  p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  /* Los bloques centrados (avisos, llamados a la acción) siguen centrados. */
+  :where(.text-center) p { text-align: center; }
   input, select, textarea, button { font: inherit; }
 }
 
