@@ -29,7 +29,7 @@ export function EncabezadoSeccion({
     <div className={cn("max-w-3xl", alineacion === "centro" && "mx-auto text-center [&_.eyebrow]:justify-center", className)}>
       {eyebrow && <p className="eyebrow mb-6">{eyebrow}</p>}
       <h2 className="text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">{titulo}</h2>
-      {texto && <div className="mt-6 text-base leading-relaxed opacity-75 sm:text-lg">{texto}</div>}
+      {texto && <div className={cn("mt-6 hyphens-auto text-base leading-relaxed opacity-75 sm:text-lg", alineacion === "centro" ? "text-center" : "text-justify")}>{texto}</div>}
     </div>
   );
 }
