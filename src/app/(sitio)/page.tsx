@@ -4,6 +4,7 @@ import Image from "next/image";
 import { fotoJugadorEstudio, fotos, listaFotosClub } from "@/config/images";
 import { Hero } from "@/components/home/hero";
 import { CtaFinal } from "@/components/site/cta-final";
+import { SeccionVideoEvento } from "@/components/site/seccion-video-evento";
 import { TarjetaClase, TarjetaTorneo } from "@/components/site/tarjetas";
 import { Ubicacion } from "@/components/site/ubicacion";
 import { estiloBoton } from "@/components/ui/button";
@@ -198,6 +199,9 @@ export default async function Inicio() {
           <div className="mt-10"><Link href="/torneos" className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-oro hover:text-oro-claro">Ver todos los torneos →</Link></div>
         </Contenedor>
       </Seccion>
+
+      {/* VIDEO DEL ÚLTIMO EVENTO */}
+      <SeccionVideoEvento />
 
       {/* GALERÍA */}
       <Seccion tono="carbon2" className="!py-20 sm:!py-28">
