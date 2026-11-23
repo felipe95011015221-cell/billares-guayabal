@@ -5,6 +5,7 @@ import { EncabezadoPagina } from "@/components/site/encabezado-pagina";
 import { Aviso, Contenedor, EncabezadoSeccion, Seccion } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/reveal";
 import { metadatos } from "@/lib/seo";
+import { SeccionVideoEvento } from "@/components/site/seccion-video-evento";
 import { hoyBogota, sumarDias } from "@/lib/time";
 
 export const dynamic = "force-dynamic";
@@ -41,6 +42,7 @@ export default function EventosPage() {
           </ul>
         </Contenedor>
       </Seccion>
+      <SeccionVideoEvento conBoton={false} />
       <Seccion tono="claro">
         <Contenedor>
           <div className="grid gap-14 lg:grid-cols-12">
